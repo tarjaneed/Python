@@ -1,0 +1,71 @@
+Tree
+
+- Hierarchical Data structure
+- Contains nodes and edges
+- Top node is root node
+- The node with no children are leaf nodes
+- Can contain left and/or right subtree
+- Siblings Nodes: Nodes with same parent node
+- Has different levels starts from 0
+
+
+Depth -> From top to bottom
+Root 0  -> 1 -> 2 …
+
+Height -> Bottom to top 0 1  2 3 so root height is 3 => height of root is height of tree
+
+
+Tree Types:
+
+Red-Black Tree:
+- Every node either red or black
+- Root always black . Every Leaf - always black
+- No 2 adjacent red nodes - Red node cannot have a red child or red parent
+
+AVL Tree:
+- Difference between height of left and right subtree is < = 1
+- Self balances
+
+2-3 Tree:
+- All leaf nodes at same level
+- Height Balanced tree
+- Insertion always done at leaf
+- Each node can have 0, 2 or 3 children
+- 2 nodes: 1 data value and 2 children’s
+- 3 nodes: 2 data values and 3 children’s
+
+Binary Tree
+
+- Left
+- Key
+- Right
+
+- Each node can have atmost 2 child nodes - either 0 or 1 or 2
+
+Types:
+
+	Full Binary Tree:
+		- All the nodes except leaf nodes have exactly 2 children
+	
+	Complete Binary Tree: (Ask)
+		- Every level is completely filled by nodes expect for the last level 
+
+	Balanced Binary Tree:
+		- Height Left and Right Subtree differs by atmost 1
+
+	Perfect Binary Tree:
+		- Each level is completely filled by nodes
+
+	Skewed Binary Tree:
+		- Each node has either 0 or 1 child
+
+	Binary Search Tree:
+		- Left Subtree has values less than the root
+		- Right Subtree has values greater than the root
+		- Inorder traversal gives sorted array
+
+	BST Traversals:
+		Preorder - Root Left Right
+		Inorder - Left Root Right
+		Postorder - Left Right Root
+
