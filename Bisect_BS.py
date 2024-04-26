@@ -8,7 +8,11 @@ list1 = [1, 2, 3, 3, 5, 6, 6, 6, 7]
 
 print(bisect.bisect_left(list1, 3)) # Returns 2 i.e. first index occurence of element 3
 
-index = bisect.bisect_right(list1, 3) # Returns 4 i.e. last index occurence of element 3 + 1 => to insert the element in the sorted order
+# bisect and bisect_right works same
+
+index = bisect.bisect(list1, 3) # Returns 4 i.e. last index occurence of element 3 + 1 => to insert the element in the sorted order
+
+print(index)
 
 list1.insert(index, 4)
 
