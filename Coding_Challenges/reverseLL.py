@@ -6,7 +6,6 @@ Question: How to change head and tail pointers after reversing the linked list '
 class Node:
   def __init__(self, data):
     self.data = data
-    self.prev = None
     self.next = None
 
 class LinkedList:
@@ -21,7 +20,6 @@ class LinkedList:
       self.head = new_node
       self.tail = self.head
     else:
-      new_node.prev = self.tail
       self.tail.next = new_node
       self.tail = self.tail.next
 
@@ -33,16 +31,20 @@ class LinkedList:
       current = current.next
 
   def reverseLL(self):
-    print('Reversed Linked List:')
-    curr = self.tail
+    curr = self.head
+    prev = None
     while curr:
-      print(curr.data)
-      curr = curr.prev
+      temp = curr.next
+      curr.next = prev
+      prev = curr # i.e. prev moves to current
+      curr = temp # move current ahead
+    self.head = prev # Node pointed by the previous ptr. is the head of the linked list at end of the while
 
 linked_list = LinkedList()
 linked_list.insert(1)
 linked_list.insert(2)
 linked_list.insert(3)
-
 linked_list.printLinkedList()
+
 linked_list.reverseLL()
+linked_list.printLinkedList()
