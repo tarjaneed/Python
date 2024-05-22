@@ -1,0 +1,74 @@
+Heap Sort: O (n logn)
+
+    2 steps:
+        - Create Heap from array i.e. insert element and perform heapify up - O(n logn)
+        - Delete Elements from the root one by one to sort: O (n logn)
+            - Delete root element
+        - Replace it with the last element then perform heapify.
+    - Build a heap from input array
+    - Repeat till heap contains only 1 element:
+        - Remove the root node
+        - Replace the root node with the last element/node in the array
+        - Perform Heapify to order the elements - heapify down compare from root to downwards
+
+    TC: O(n logn)
+    SC: O(logn) - Recursive and O(1) - Iterative
+
+
+Merge Sort: O(nlogn) - Total levels are logn and at each level n elements are merged
+    SC - Recursive - O(n) In-Place O(1)
+
+    - Recursive algo
+    - Divide and conquer
+    - Break a large problem into a sub problem
+    - Find solutions for smaller problems and merge them to find solution to the main problem
+
+    
+    Based on array index set low = 0 and high - len(arr) - 1 indexes
+    Find the mid = (l + h) / 2
+    Based on this mid call the mergeSort again on left and right sides
+        mergeSort(l, mid)
+        mergeSort(mid + 1, h)
+    Merge this 2 sorted parts. O(n) - n elements merged at each level
+        merge(l, mid, h)
+
+    Levels - log(n)
+
+
+Quick Sort: - O(nlogn) - log(n) levels and n elements compared in each partition level
+
+    SC - Recursive - O(n)
+
+    Keeps calling partition and dividing list into smaller list until we have single element 
+
+    Element is in sorted order if all the elements before it on left are smaller and all the elements to the right of it are greater.
+
+    DAC method
+
+    Select pivot element - which means find sorted position for this element
+
+    Take 2 pointers i = 0 and j = len(arr) - 1 (last index)
+
+        - i will search for the elements less than pivot and send to left of it
+
+        - j will search for the elements greater than pivot and send to right of it
+
+    Increment i till we find element greater than pivot then decrement j until we find element smaller than pivot and exchange them continue till I reaches end of list or j reached 0th index or i becomes greater than j which means I crossed j at that time do not swap.
+
+    This means we found pivot position as j. So move pivot to that position i.e. swap them
+
+    After that partition them based on j and perform quick sort on left and right
+
+    Partition(l, h) - O(n)
+
+        Pivot = A[l]
+        i = l, j = h
+        While I < j:
+            Loop for I and j
+
+            If (I < j)
+            Swap A[I] and A[j]
+
+
+        Swap A[l] with A[j]
+        Return j # partition position/index
