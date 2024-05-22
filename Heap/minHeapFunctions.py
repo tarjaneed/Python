@@ -1,4 +1,5 @@
 # Implement Heap: Min Heap common operations: Insert, Delete, Find Min - Recursively for every parent node all of its descendants are >= to the parent node
+# 2 Properties to satisy: Structure Property and Order Property
 
 class Heap:
     def __init__(self):
@@ -79,9 +80,66 @@ class Heap:
             # This is when there is no need to swap and the node/element is already in proper place
             # Eg. node is <= left or right (only 1 child exists) or both left and right (if both child exists)
             else:
-                break    
+                break
 
         return minimum
+    
+    ''' Builds a heap from an array by doing heapify down on each index and then moves to the next index by subtracting; 
+        starts from len(heap) // 2 - node/index and goes all the way till root node/index 1
+
+        TC: O(n) - for n nodes there are roughly n/2 leaf nodes at the last level, based on this:
+        last level do not have to do any heapify down 0 * n/2
+        2nd last level has to do 1 level heapify down 1 * n/4
+        3rd last level has to do 2 levels heapify down 2 * n/8
+        ....
+        root levels has to do till the height of the tree ... h * 1
+
+        The last level is approx. equal to the sum of the above levels or terms and when we perform summation of all the above levels that formula simplifies 
+        to O(n)
+    '''
+    def heapify(self, arr):
+        # Take the element at 0th index to end of the array to keep the 0th slot empty or to not consider it. 
+        # We can do this as anyway elements are not in order all the time and we need to re-order anyway & 
+        # also it doesn't satisfy structure prop. as 0th slot is not empty so by doing this we fix that too
+        arr.append(arr[0])
+
+        # Assign an array into a heap
+        heap_from_arr = arr
+
+        size = len(heap_from_arr) - 1
+        current_node = (size // 2) # Since leaf nodes are already in order so we can skip them and roughly half of the nodes would be leaves
+
+        # To satisfy the order property
+        # We would check till we reach root node 1; also for each node/index we do heapify down and then move to next index
+        while current_node > 0:
+            index = current_node
+            while ((2 * index) < len(heap_from_arr)):
+                left = 2 * index
+                right = (2 * index) + 1
+
+                # Swap with Right Side if there is a: right child; if right is less than left; if right is less than root/parent else move to check on left side
+                if (right < len(heap_from_arr) and heap_from_arr[right] < heap_from_arr[left] and heap_from_arr[right] < heap_from_arr[index]):
+                    temp = heap_from_arr[index]
+                    heap_from_arr[index] = heap_from_arr[right]
+                    heap_from_arr[right] = temp
+
+                    index = right # Update the index to point to the right side to check further recursively i.e. to index = 2 * (index + 1)
+
+                # Swap with left side - no need to check if left child exists since we already check in while
+                elif (heap_from_arr[left] < heap_from_arr[index]):
+                    temp = heap_from_arr[index]
+                    heap_from_arr[index] = heap_from_arr[left]
+                    heap_from_arr[left] = temp
+
+                    index = left # Update the index to point to the left side to check further recursively i.e. to index = 2 * index
+
+                # This is when there is no need to swap and the node/element is already in proper place
+                # Eg. node is <= left or right (only 1 child exists) or both left and right (if both child exists)
+                else:
+                    break
+
+            current_node -= 1
+        return heap_from_arr
 
 minheap = Heap()
 minheap.printMinHeap()
@@ -102,3 +160,9 @@ print('Mininum =>', minheap.findMin())
 
 print('Popped Element =>', minheap.pop())
 minheap.printMinHeap()
+
+arr = [10, 20, 30, 60, 40, 5]
+
+heapify_arr = minheap.heapify(arr)
+heapify_arr.pop(0)
+print(heapify_arr)
