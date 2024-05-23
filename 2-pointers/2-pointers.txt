@@ -1,0 +1,14 @@
+In this approach we have to make use of 2 pointers
+
+When a problem asks to find pairs or triplets from a sorted array or a linked list that satisfies certain given condition, we can think of applying 
+the 2 pointers technique to it.
+
+When a given list or an array is unsorted we make use of a HashMap
+
+Also, left pointer is always behind or equal to the right one and left ptr is kept at index = 0 and right is kept at index = len(array) - 1
+
+Whel left > right, that means left ptr. crossed the right ptr. and if we keep going we keep considering the elements that are already considered, which 
+results in a wrong output.
+
+Another variation is slow and fast pointers. Slow pointer moves slowly in comparison to the fast pointer.
+Example: for detecting cycles in the linked list, slow pointer increments by 1 whereas fast pointer increments by 2.
