@@ -100,3 +100,19 @@ print(list1)
 print(list1.count(30))  # 2 - Since 30 appears 2 times in the list
 
 printList()
+
+list1.extend([20, 24])
+
+print(list1)
+
+list3 = [2, 3]
+list2 = [6, 5, 1]
+
+list4 = list3 + list2
+print(list4)
+
+list2.sort()
+
+print('list2', list2)
+
+print(sorted(list4))

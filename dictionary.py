@@ -42,3 +42,8 @@ print(user)
 user.pop('name')
 print(user)
 
+count = {'1': 2, '2': 1, '3': 5}
+
+# Sort count dictionary in reverse order based on count value - Lambda Function
+sorted_dict = sorted(count.items(), key = lambda item: item[1], reverse=True)
+print(sorted_dict)
