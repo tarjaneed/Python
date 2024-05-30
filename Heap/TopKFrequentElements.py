@@ -17,21 +17,29 @@ Approach 2: Using Min Heap - Because we want elements with the highest count
 
 '''
 
+def findFrequentElements(arr, k):
+    freq_count = {}
+
+    for i in range(0, len(arr)):
+        if arr[i] not in freq_count.keys():
+            freq_count[arr[i]] = 1
+        else:
+            freq_count[arr[i]] += 1
+
+    sorted_freq_count = sorted(freq_count.items(), key = lambda item: item[1], reverse = True)
+
+    frequent_elements = []
+    for element, freq in sorted_freq_count:
+        frequent_elements.append(element)
+
+    return frequent_elements[:k] # Split to get the first k elements
+
 nums = [1, 3, 5, 12, 11, 12, 11]
 k = 2
 
-freq_count = {}
+print(findFrequentElements(nums, k))
 
-for i in range(0, len(nums)):
-    if nums[i] not in freq_count.keys():
-        freq_count[nums[i]] = 1
-    else:
-        freq_count[nums[i]] += 1
+nums = [5, 12, 11, 3, 11]
+k = 2
 
-sorted_freq_count = sorted(freq_count.items(), key = lambda item: item[1], reverse = True)
-
-frequent_elements = []
-for element, freq in sorted_freq_count:
-    frequent_elements.append(element)
-
-print(frequent_elements[:k]) # Split to get the first k elements
+print(findFrequentElements(nums, k))
