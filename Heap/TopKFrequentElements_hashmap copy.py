@@ -12,9 +12,6 @@ Approach 1: O(nlogn)
 - Count frequency of each element and store in a hashmap O(n)
 - Perform sorting on it in desc order which brings highest counts elements to the beginning. O(n logn)
 - Then take first k elements from that list/result.
-
-Approach 2: Using Min Heap - Because we want elements with the highest count
-
 '''
 
 def findFrequentElements(arr, k):
@@ -27,6 +24,8 @@ def findFrequentElements(arr, k):
             freq_count[arr[i]] += 1
 
     sorted_freq_count = sorted(freq_count.items(), key = lambda item: item[1], reverse = True)
+
+    print(sorted_freq_count)
 
     frequent_elements = []
     for element, freq in sorted_freq_count:
