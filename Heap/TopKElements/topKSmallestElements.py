@@ -27,7 +27,7 @@ for i in range(0, k):
 for i in range(k, len(arr)): # O(N - k) = O(N)
     if arr[i] < -(max_heap[0]):
         heapq.heappop(max_heap) # Remove the root element of heap - max element; O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
-        heapq.heappush(max_heap, -(arr[i]))  # O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
+        heapq.heappush(max_heap, -(arr[i])) # O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
 
 for i in range(0, len(max_heap)):
     max_heap[i] = -(max_heap[i])
