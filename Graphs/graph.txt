@@ -1,0 +1,8 @@
+Unlike Trees, Graphs can have cycles.
+
+Graphs can be directed and undirected.
+
+Graphs can be represented using:
+    1. Matrix
+    2. Adjacency Matrix
+    3. Adjacency List

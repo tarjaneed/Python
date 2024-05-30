@@ -33,7 +33,7 @@ adjMatrix = [
 print(adjMatrix[1][0]) # 1 => means that there is an edge from vertex 1 i.e. B to vertex 0 i.e. A
 print(adjMatrix[0][1]) # 0 => means that there is no edge from vertex 0 i.e. A to vertex 1 i.e. B
 
-# Given directed edges, create an adjacency list to represent a graph i.e. A -> B
+# Given directed edges, create an adjacency list to represent a graph ["A", "B"] means A -> B
 
 edges = [["A", "B"], ["B", "C"], ["B", "E"], ["C", "E"], ["E", "D"]]
 adjList = {} # Create a HashMap to build an adjacency list
@@ -48,6 +48,6 @@ for src, dest in edges:
         adjList[dest] = []
 
     # If exists within the src vertex's neighbors i.e. keep adding the dest to represent the edges
-    adjList[src] = dest # Since in directed edges A -> B i.e. source points to destination
+    adjList[src].append(dest) # Since in directed edges A -> B i.e. source points to destination
 
 print('Adjacency List => ', adjList)
