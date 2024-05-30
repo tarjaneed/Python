@@ -6,3 +6,5 @@ Graphs can be represented using:
     1. Matrix
     2. Adjacency Matrix
     3. Adjacency List
+
+Trees can have 2 children whereas graphs can have multiple childrens that is why we use list for its neighbors.
