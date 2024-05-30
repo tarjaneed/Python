@@ -26,13 +26,14 @@ for i in range(0, k):
     heapq.heappush(min_heap, arr[i])
 '''
 
+# min-heap root is always the minimum element
 # Check rest of the elements in arr with the root; if element > root, we pop root and push this new element; else we check next elements
 # By the time we reach end of the list the heap will have 3 largest elements
 
 # TC: O(Nlogk)
 for i in range(k, len(arr)): # O(N - k) = O(N)
     if arr[i] > min_heap[0]:
-        heapq.heappop(min_heap) # Remove the root element of heap - min element; O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
-        heapq.heappush(min_heap, arr[i])  # O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
+        heapq.heappop(min_heap) # Re-orders the heap; Remove the root element of heap - min element; O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
+        heapq.heappush(min_heap, arr[i])  # Re-orders the heap; O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
 
 print(min_heap)
