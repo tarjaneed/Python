@@ -7,25 +7,32 @@ arr = [3, 1, 5, 12, 2, 11] k = 3
 result = [5, 11, 12] => Order can be any
 
 since largest consider min heap
+
+TC: O(N) + O(Nlogk) = O(Nlogk)
 '''
 
 arr = [3, 1, 5, 12, 2, 11]
 k = 3
 
-# Build min heap with first k elements i.e. of 3 elements in this case
-list1 = []
+# TC: O(N); Build min heap with first k elements i.e. of 3 elements in this case
+min_heap = []
 for i in range(0, k):
-    list1.append(arr[i])
+    min_heap.append(arr[i])
 
-heapq.heapify(list1) # Creates a min-heap with first k-elements
+heapq.heapify(min_heap) # Creates a min-heap with first k-elements
+
+'''
+for i in range(0, k):
+    heapq.heappush(min_heap, arr[i])
+'''
 
 # Check rest of the elements in arr with the root; if element > root, we pop root and push this new element; else we check next elements
 # By the time we reach end of the list the heap will have 3 largest elements
 
 # TC: O(Nlogk)
 for i in range(k, len(arr)): # O(N - k) = O(N)
-    if arr[i] > list1[0]:
-        heapq.heappop(list1) # Remove the root element of heap - min element; O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
-        heapq.heappush(list1, arr[i])  # O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
+    if arr[i] > min_heap[0]:
+        heapq.heappop(min_heap) # Remove the root element of heap - min element; O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
+        heapq.heappush(min_heap, arr[i])  # O(log n) i.e. O(log k) => because we consider k elements out of n instead of entire n
 
-print(list1)
+print(min_heap)
