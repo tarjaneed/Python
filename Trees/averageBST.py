@@ -1,5 +1,9 @@
 '''
 Given a binary tree, populate an array to represent the averages of all of its levels.
+
+      1
+   2    3
+  4  5 6  7 
 Level Averages: [1, 2.5, 5.5]
 
 TC: O(n) SC: O(n)
