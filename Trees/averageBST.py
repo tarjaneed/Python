@@ -39,10 +39,11 @@ def averageOfLevels(root):
 
     queue.append(root) # Append root to the queue i.e. add first element to the queue
 
+    # O(n) + O(n) = O(n)
     while len(queue):
         curr_level = []
 
-        for _ in range(0, len(queue)):
+        for _ in range(0, len(queue)): # O(n)
             node = queue.pop()
             curr_level.append(node.key)
             if node.left:
@@ -50,7 +51,7 @@ def averageOfLevels(root):
             if node.right:
                 queue.append(node.right)
 
-        result.append(sum(curr_level) / len(curr_level)) # Instead of current levels we store average of that level
+        result.append(sum(curr_level) / len(curr_level)) # Instead of current levels we store average of that level - O(n)
 
     return result
 
