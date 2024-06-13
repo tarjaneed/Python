@@ -41,7 +41,7 @@ def findSubsets(nums):
         # output += [lst + [num] for lst in output]
 
         # Add this number to all the subsets we have seen so far i.e. in the lists that output holds
-        new_subsets = []
+        new_subsets = [] # Hold new subsets i.e. takes a list from output and adds a number to it and that gets appended to new_subsets
         for lst in output:
            new_subsets.append(lst + [num])
 
