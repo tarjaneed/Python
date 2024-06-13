@@ -32,12 +32,12 @@ def add(num):
         heapq.heappush(large, val) # large[7, 2, 3]
 
     # Uneven size: Now check if difference between small and large heap exceeded 1 or not; if it did we need to re-balance and move to the root element to the large heap
-    if len(small) > len(large) + 1: # Difference is 2 or more   2 > 1 + 1 no
+    if len(small) - len(large) > 1: # Difference is 2 or more   2 > 1 + 1 no
         # Remove the root element from the small heap and add to large heap to re-balance
         val = - 1 * heapq.heappop(small) # -2 => 2 small [-1]
         heapq.heappush(large, val) # large = [2]
 
-    if len(large) > len(small) + 1:
+    if len(large) - len(small) > 1:
         val = heapq.heappop(large)
         heapq.heappush(small, -1 * val)
 # O(1)
