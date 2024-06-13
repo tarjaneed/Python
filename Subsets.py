@@ -46,6 +46,7 @@ def findSubsets(nums):
            new_subsets.append(lst + [num])
 
         output += new_subsets # Copy previous output + add new subsets
+
     return output
 
 nums = [1, 2, 3]
