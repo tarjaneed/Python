@@ -16,7 +16,7 @@ Approach:
 # TC: O(n)
 
 nums = [1, 5, 2, 6, 4]
-n = len(nums) + 1 # 6
+n = len(nums) + 1 # 6. Need to do + 1 since nums or input array will always have one missing number
 
 # XOR 1 to n integers
 x1 = 1
@@ -25,7 +25,7 @@ for i in range(2, n + 1): # n + 1 since stop is not included so if keep n it wil
 
 # XOR integers in input array
 x2 = nums[0]
-for i in range(1, n - 1):
+for i in range(1, len(nums)):
     x2 = x2 ^ nums[i]
 
 print(x1 ^ x2)
