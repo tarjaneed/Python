@@ -16,7 +16,7 @@ Input: intervals = [[1,2],[2,3]]
 Output: [[1,3]]
 '''
 
-# TC: O(nlogn)
+# TC: O(nlogn) - Since sorting is performed
 # SC: O(n) - Worst is that there are no overlaps and all lists within a list has to be appended
 
 def mergeIntervals(intervals):
