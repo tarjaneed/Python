@@ -24,23 +24,12 @@ class Node:
         self.left = None
         self.right = None
 
-def matchSequence(root, sequence):
+def matchSequence2(root, givenSequence, pathSequence=[]):
     if root is None:
-        return False
-    
-    temp_seq.append(root.data)
+       return pathSequence == givenSequence
 
-    if not root.left and not root.right:
-        # Match and return result of temp_seq and input seq
-        temp_seq = ''.join(str(x) for x in temp_seq)
-        sequence = ''.join(str(x) for x in sequence)
-
-        print(temp_seq)
-        print(sequence)
-
-        return temp_seq == sequence
-
-    return matchSequence(root.left, sequence) or matchSequence(root.right, sequence)
+    newPathSequence = pathSequence + [root.data]
+    return matchSequence2(root.left, givenSequence, newPathSequence) or matchSequence2(root.right, givenSequence, newPathSequence)
 
 root = Node(1)
 root.left = Node(0)
@@ -50,4 +39,6 @@ root.right = Node(1)
 root.right.left = Node(6)
 root.right.right = Node(5)
 
-print(matchSequence(root, [1, 1, 6]))
+print(matchSequence2(root, [1, 0, 1]))
+print(matchSequence2(root, [1, 1, 6]))
+print(matchSequence2(root, [1, 0, 8]))
