@@ -16,7 +16,7 @@ Start i and j at 0
 Loop till j < len(s):
     Create a hash that stores the {char: count} of the jth element we are traversing
 
-    Now here condition is that all characters in the window we check must be unique.
+    Now here condition is that all characters in the window we check must be unique i.e. no repeating characters.
 
     hashmap size gives us number of unique characters that we match with the current window size (j - i + 1)
 
