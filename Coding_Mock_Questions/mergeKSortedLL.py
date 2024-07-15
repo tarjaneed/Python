@@ -71,6 +71,8 @@ def merge2Lists(list1, list2):
     else:
         list2.next = merge2Lists(list1, list2.next)
         return list2
+    
+    return None
 
 def partitionAndMerge(start, end, lists):
     if start == end:
@@ -79,7 +81,7 @@ def partitionAndMerge(start, end, lists):
     if start > end:
         return None
 
-    mid = (end - start) // 2
+    mid = start + (end - start) // 2
 
     L1 = partitionAndMerge(start, mid, lists)
     L2 = partitionAndMerge(mid + 1, end, lists)
