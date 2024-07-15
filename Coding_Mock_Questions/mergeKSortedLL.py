@@ -33,7 +33,7 @@ Merge Sort - Divice and Conquer
         if l2 is None:
             return l1
 
-    if l1 < l2 we know the result would start from l1 else l2
+    if l1 < l2 we know the result would start from l1 hence we return l1 else l2
         we again call merge2lists recursively till the base is hit.
         so in l1->next we assign whatever is returned from merge2lists(l1->next, l2)
         we basically call same funtion on l1->next and l2 to do sorting
