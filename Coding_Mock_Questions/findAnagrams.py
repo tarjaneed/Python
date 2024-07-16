@@ -55,7 +55,7 @@ So we would keep on checking the window size of k in the string and keep sliding
             Then move i and j
 '''
 
-# TC: O(n) SC: O(n) in worst case if length of pattern is same as the length of input but all the characters are different
+# TC: O(n) SC: O(1) or O(n) if we consider hashmap space in worst case if length of pattern is same as the length of input but all the characters are different
 
 def findAnagrams(s, p):
     result = []
