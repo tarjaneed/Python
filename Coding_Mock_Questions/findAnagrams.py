@@ -25,7 +25,7 @@ Here the window size i.e. k = len(pattern)
 So we would keep on checking the window size of k in the string and keep sliding it to find the anagrams.
 
 - Initialize result = [] and anagram_count = 0
-- Create a hashmap for pattern => {char: count}
+- Create a hashmap for pattern => {char: count} - a way to keep track and check different possibilties of anagrams of a given string
 - Initialize a hash_counter variable to len(pattern_hashmap); this will be useful to determine whether the window we are currently checking when we hit the window k is a anagram or not;
     So, if this hash_counter becomes zero by the time we hit k we know that we found 1 anagram; 
     we need to decrement it everytime we traverse 'j', we check if s[j] is present in the hashmap; if it is we decrement the count of s[j] in hashmap;
