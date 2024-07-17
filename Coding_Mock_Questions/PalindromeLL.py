@@ -22,7 +22,7 @@ Step - 3:
 
     if first.data != second.data
         return False # LL is not a palindrome
-    otherwise
+    otherwise if they match go ahead and check other nodes
         move first to next
         and second to next
 If we come out of the loop we know all comparisons were valid i.e. LL is palindrome
