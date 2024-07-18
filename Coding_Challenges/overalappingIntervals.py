@@ -64,7 +64,7 @@ def findConflictingAppointements(appointments):
 
     return conflicting_appointments
 
-# Problem 1: TC: O(n logn) - Since sorting is performed SC: O(1)
+# Problem 1: TC: O(n logn) (Since Sorting is done) SC: O(1) - Since sorting is performed
 def findOverlap(appointments):
     if len(appointments) == 0:
         return False
