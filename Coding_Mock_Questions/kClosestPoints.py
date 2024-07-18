@@ -8,7 +8,7 @@ Since sqrt(5) < sqrt(10), therefore (1, 2) is closer to the origin.
 '''
 
 '''
-Since closest we use maxheap
+Since closest i.e. smallest we use maxheap 
 We loop till we check all the points i.e. till len(points)
     for each point we calculate the euclidian distance and push it to the max heap
 
