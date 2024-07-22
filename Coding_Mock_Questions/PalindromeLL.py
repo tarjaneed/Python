@@ -125,7 +125,6 @@ head.next.next.next.next.next = Node(1)
 printLL(head)
 print(checkIsPalindrome(head))
 
-
 head = None
 
 printLL(head)
