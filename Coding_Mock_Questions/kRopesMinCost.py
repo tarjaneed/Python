@@ -41,11 +41,8 @@ import heapq
 
 def findMinCost(ropes):
 
-    if len(ropes) == 0:
+    if len(ropes) <= 1:
         return 0
-    
-    if len(ropes) == 1:
-        return ropes[0]
     
     minCost = 0
     min_heap = []
@@ -66,4 +63,7 @@ def findMinCost(ropes):
     return minCost
 
 ropes = [1, 3, 11, 5]
+print(findMinCost(ropes))
+
+ropes = [5]
 print(findMinCost(ropes))
