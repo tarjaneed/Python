@@ -1,6 +1,6 @@
 # Print 1 to N
 
-# TC: O(n)
+# TC: O(n) Number of function calls = time complexity
 # SC: O(n)
 
 def printSeq(i, n):
